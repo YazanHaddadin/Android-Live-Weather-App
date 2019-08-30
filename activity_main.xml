@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context="com.example.yazuz.weatherapp.MainActivity">
+
+    <ImageView
+        android:id="@+id/refreshButton"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="14dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/refresh" />
+
+    <ImageView
+        android:id="@+id/todayIcon"
+        android:layout_width="125dp"
+        android:layout_height="102dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/todayDesc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewToday"
+        app:srcCompat="@drawable/sunny" />
+
+    <TextView
+        android:id="@+id/todayTempMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tempToday"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="73sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.13" />
+
+    <TextView
+        android:id="@+id/dateMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/todayDate"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/TextViewToday"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/location" />
+
+    <TextView
+        android:id="@+id/TextViewToday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/textViewToday"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/todayTempMain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/location" />
+
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/location"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/TextViewToday"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/todayTempMain" />
+
+    <Button
+        android:id="@+id/buttonMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="166dp"
+        android:layout_marginStart="166dp"
+        android:background="@android:color/transparent"
+        android:text="@string/buttonMore"
+        android:textColor="#212121"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="115dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewToday"
+        android:scrollbars="none"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/contentPane"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/day1layout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusableInTouchMode="true"
+                android:focusable="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/day1TempMain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="47dp"
+                    android:paddingRight="47dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/day1weather"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/day1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:text="@string/day1date"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/day1Icon"
+                    android:layout_width="130dp"
+                    android:layout_height="45dp"
+                    android:contentDescription="@string/day1desc"
+                    app:srcCompat="@drawable/cloudy" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/day2layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/day2TempMain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="47dp"
+                    android:paddingRight="47dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/day2weather"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/day2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:text="@string/day2date"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/day2Icon"
+                    android:layout_width="130dp"
+                    android:layout_height="45dp"
+                    android:contentDescription="@string/day2desc"
+                    app:srcCompat="@drawable/rainy" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/day3layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/day3TempMain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="47dp"
+                    android:paddingRight="47dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/day3weather"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/day3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:text="@string/day3date"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/day3Icon"
+                    android:layout_width="130dp"
+                    android:layout_height="45dp"
+                    android:contentDescription="@string/day3desc"
+                    app:srcCompat="@drawable/sunny" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/day4layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/day4TempMain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="47dp"
+                    android:paddingRight="47dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/day4weather"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/day4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:text="@string/day4date"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/day4Icon"
+                    android:layout_width="130dp"
+                    android:layout_height="45dp"
+                    android:contentDescription="@string/day4desc"
+                    app:srcCompat="@drawable/snowy" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+</android.support.constraint.ConstraintLayout>
