@@ -1,4 +1,4 @@
-# Read Me
+# LIVE WEATHER APPLICATION (ANDROID)
 
 The Design I went for to create my weather app was a simple one with today’s weather displayed in a large Text View with the today’s 
 day and the current location as well as an icon describing the weather conditions (sunny, cloudy, rainy, or snowy). Also I added a 
